@@ -22,11 +22,9 @@ class LandmarksController < ApplicationController
     end
 
     post '/landmarks' do
-      @landmark = Landmark.find(params[:id])
-      @landmark.name = params['landmark']['name']
-      @landmark.year_completed = params['landmark']['year_completed']
+      @landmark = Landmark.create(params['landmark'])
       @landmark.save
-        redirect to '/landmarks/#{@landmark.id}'
+      redirect to :"/landmarks/#{@landmark.id}"
     end
 
     post '/landmarks/:id' do
