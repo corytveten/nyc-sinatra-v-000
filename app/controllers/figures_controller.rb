@@ -28,8 +28,8 @@ class FiguresController < ApplicationController
 
   get 'figures/:id/edit' do
     'hello world'
-    @figure = Figure.find_by_id(params[:id])
-    erb :'figures/edit'
+#    @figure = Figure.find_by_id(params[:id])
+#    erb :'figures/edit'
   end
 
   patch '/figures/:id' do
