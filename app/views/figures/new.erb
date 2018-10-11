@@ -4,14 +4,21 @@
   <label>Historical Figure</label>
   <input id='figure_name' type='text' name='figure[name]'></br>
 
-  <lable>Title</label>
+  <label>Title</label>
     <%Title.all.each do |title|%>
     <input id="title_<%= title.id %>" type="checkbox" name="figure[title_ids][]" value="<%= title.id %>">
     <% end %>
 
   <label>Create New Title:</label>
   <input id='Title' type='text' name='title[name]'> </br>
+
   <label>Landmark</label>
+    <%Landmark.all.each do |landmark|%>
+    <input id='landmark_<%= landmark.id %>' type='checkbox' name='figure[landmark_ids][]' value='<%= title.id %>'>
+    <% end %>
+
+  <label>Create New Landmark</label>
+    <input id='new_landmark' type='text' name='landmark[name]'> </br>
 
   <imput type='submit' value='Save'>
 </form>
